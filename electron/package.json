@@ -1,12 +1,13 @@
 {
-  "name": "Jellyfish",
-  "version": "1.0.0",
-  "description": "Rhino / Grasshopper",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "devDependencies": {
-    "electron": "^2.0.0"
-  }
+    "name": "Jellyfish",
+    "version": "1.0.0",
+    "description": "Rhino / Grasshopper",
+    "main": "main.js",
+    "scripts": {
+	"start": "electron ."
+    },
+    "devDependencies": {
+	"electron": "^2.0.0",
+	"electron-builder": "^20.24.4"
+    }
 }
