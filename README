@@ -1,1 +1,5 @@
 Getting started
+
+Tests:
+curl -d '@sample.json' -X POST -v 'localhost:3720/settings?id=1'
+curl -v 'localhost:3720/settings?id=1'
