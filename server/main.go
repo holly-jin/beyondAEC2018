@@ -1,26 +1,28 @@
 package main
+
 import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
-	"fmt"
 	"os"
 	"strconv"
-	"io/ioutil"
-	"encoding/json"
 	"time"
 )
 
 type (
 	Config struct {
-		Version string
-		BoolSetting bool
+		Version       string
+		BoolSetting   bool
 		StringSetting string
-		NumSetting int
+		NumSetting    int
 		RetrievedTime time.Time
 	}
 )
+
 func GetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
-	data, err := ioutil.ReadFile(fmt.Sprintf("configs/%d.json",fileId))
+	data, err := ioutil.ReadFile(fmt.Sprintf("configs/%d.json", fileId))
 	if err != nil {
 		http.Error(w, "Missing Data", 404)
 		return
@@ -54,7 +56,7 @@ func SetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
 		http.Error(w, "JSON decoding issue", 404)
 		return
 	}
-	err = ioutil.WriteFile(fmt.Sprintf("configs/%d.json",fileId), data, os.ModePerm)
+	err = ioutil.WriteFile(fmt.Sprintf("configs/%d.json", fileId), data, os.ModePerm)
 	if err != nil {
 		http.Error(w, "Unable to write file", 500)
 		return
@@ -63,7 +65,7 @@ func SetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
 	fmt.Fprint(w, "File Saved")
 }
 
-func main () {
+func main() {
 	http.HandleFunc("/settings", func(w http.ResponseWriter, r *http.Request) {
 		id := r.URL.Query().Get("id")
 		idNum, err := strconv.Atoi(id)
