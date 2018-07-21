@@ -8,16 +8,21 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-	"time"
 )
 
 type (
 	Config struct {
-		Version       string
-		BoolSetting   bool
-		StringSetting string
-		NumSetting    int
-		RetrievedTime time.Time
+		Orbit                int
+		Zoom                 int
+		PresetValue          int
+		DisplayMode          int
+		View                 int
+		LayerTree            int
+		LayerCirculation     int
+		LayerSiteBuilding    int
+		LayerProjectBuilding int
+		LayerSunShadow       int
+		LayerRoad            int
 	}
 )
 
@@ -33,7 +38,6 @@ func GetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
 		http.Error(w, "Bad file?", 404)
 		return
 	}
-	c.RetrievedTime = time.Now()
 	jsonData, err := json.Marshal(c)
 	if err != nil {
 		http.Error(w, "Json encoding error", 404)
@@ -54,6 +58,7 @@ func SetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
 	err = json.Unmarshal(data, &c)
 	if err != nil {
 		http.Error(w, "JSON decoding issue", 404)
+		log.Println(err.Error())
 		return
 	}
 	err = ioutil.WriteFile(fmt.Sprintf("configs/%d.json", fileId), data, os.ModePerm)
@@ -75,10 +80,18 @@ func main() {
 		}
 		switch r.Method {
 		case "POST":
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+			w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 			SetSettings(w, r, idNum)
 			return
 		case "GET":
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+			w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 			GetSettings(w, r, idNum)
+			return
+		case "OPTIONS":
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+			w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 			return
 		default:
 			http.Error(w, "Not found man", 404)
