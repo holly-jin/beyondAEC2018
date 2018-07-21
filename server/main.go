@@ -23,6 +23,8 @@ type (
 		LayerProjectBuilding int
 		LayerSunShadow       int
 		LayerRoad            int
+		SelectedLayer        int
+		SelectedLayerStyle   int
 	}
 )
 

@@ -11,9 +11,9 @@
     <div class="container-fluid">
 
       <div class="row">
-	<div class="col-sm p-2 text-center" style="background-color:#eee;">
-	  <img class="img-fluid" src="img/2018Hackathon_icon.png" style="height: 4em; width:4em;"/>
-	</div>
+        <div class="col-sm p-2 text-center" style="background-color:#eee;">
+          <img class="img-fluid" src="img/2018Hackathon_icon.png" style="height: 4em; width:4em;"/>
+        </div>
       </div>
 
       <label for="orbit">Orbit</label>
@@ -21,150 +21,184 @@
 
       <label for="zoom">Zoom</label>
       <input type="range" class="custom-range js-change" id="zoom" min="0" max="100">
-      
+
       <ul class="nav nav-tabs" role="tablist">
-	<li class="nav-item">
-	  <a class="nav-link active" id="simple-tab" data-toggle="tab" href="#simple" role="tab" aria-controls="simple" aria-selected="true">Simple</a>
-	</li>
-	<li class="nav-item">
-	  <a class="nav-link" id="advanced-tab" data-toggle="tab" href="#advanced" role="tab" aria-controls="advanced" aria-selected="false">Advanced</a>
-	</li>
+        <li class="nav-item">
+          <a class="nav-link active" id="simple-tab" data-toggle="tab" href="#simple" role="tab" aria-controls="simple" aria-selected="true">Simple</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="advanced-tab" data-toggle="tab" href="#advanced" role="tab" aria-controls="advanced" aria-selected="false">Advanced</a>
+        </li>
       </ul>
-      <div class="tab-content">
-	<div class="tab-pane fade show active" id="simple" role="tabpanel" aria-labelledby="simple-tab">
+      <div class="tab-content pt-3">
+        <div class="tab-pane fade show active" id="simple" role="tabpanel" aria-labelledby="simple-tab">
 
-	  <!-- Theses views corresponding numbers -->
-	  <div class="custom-control custom-radio">
-	    <input type="radio" id="simpleSelection1" name="simpleSelection" class="custom-control-input  js-change" value="0">
-	    <label class="custom-control-label" for="simpleSelection1">Aerial</label>
-	  </div>
-	  <div class="custom-control custom-radio">
-	    <input type="radio" id="simpleSelection2" name="simpleSelection" class="custom-control-input  js-change" value="1">
-	    <label class="custom-control-label" for="simpleSelection2">Street</label>
-	  </div>
-	  <div class="custom-control custom-radio">
-	    <input type="radio" id="simpleSelection3" name="simpleSelection" class="custom-control-input  js-change" value="2">
-	    <label class="custom-control-label" for="simpleSelection3">Building</label>
-	  </div>
+          <!-- Theses views corresponding numbers -->
+          <div class="custom-control custom-radio">
+            <input type="radio" id="simpleSelection1" name="simpleSelection" class="custom-control-input  js-change" value="0">
+            <label class="custom-control-label" for="simpleSelection1">Aerial</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="simpleSelection2" name="simpleSelection" class="custom-control-input  js-change" value="1">
+            <label class="custom-control-label" for="simpleSelection2">Street</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="simpleSelection3" name="simpleSelection" class="custom-control-input  js-change" value="2">
+            <label class="custom-control-label" for="simpleSelection3">Building</label>
+          </div>
 
-	</div>
-	<div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
-
-
+        </div>
+        <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
 
 
 
-	  <div class="card border-dark mb-3">
-	    <div class="card-header">Display Mode</div>
-	    <div class="card-body text-dark">
-
-	      <div class="custom-radio custom-control">
-		<input type="radio" id="displayMode0" name="displayMode" class="custom-control-input  js-change" value="0">
-		<label class="custom-control-label" for="displayMode0">Diagrammatic</label>
-	      </div>
-	      <div class="custom-radio custom-control">
-		<input type="radio" id="displayMode1" name="displayMode" class="custom-control-input  js-change" value="1">
-		<label class="custom-control-label" for="displayMode1">Shaded</label>
-	      </div>
-
-	    </div>
-	  </div>
 
 
-	  
-	  <div class="card border-dark mb-3">
-	    <div class="card-header">View</div>
-	    <div class="card-body text-dark">
-	      
-	      <div class="custom-radio custom-control">
-		<input type="radio" id="view0" name="view" class="custom-control-input  js-change" value="0">
-		<label class="custom-control-label" for="view0">Aerial</label>
-	      </div>
-	      
-	      <div class="custom-radio custom-control">
-		<input type="radio" id="view1" name="view" class="custom-control-input  js-change" value="1">
-		<label class="custom-control-label" for="view1">Street Perspecive</label>
-	      </div>
-	      
-	      <div class="custom-radio custom-control">
-		<input type="radio" id="view2" name="view" class="custom-control-input  js-change" value="2">
-		<label class="custom-control-label" for="view2">Building Perspecive</label>
-	      </div>
+          <div class="card border-dark mb-3">
+            <div class="card-header">Display Mode</div>
+            <div class="card-body text-dark">
 
-	    </div>
-	  </div>
+              <div class="custom-radio custom-control">
+                <input type="radio" id="displayMode0" name="displayMode" class="custom-control-input  js-change" value="0">
+                <label class="custom-control-label" for="displayMode0">Diagrammatic</label>
+              </div>
+              <div class="custom-radio custom-control">
+                <input type="radio" id="displayMode1" name="displayMode" class="custom-control-input  js-change" value="1">
+                <label class="custom-control-label" for="displayMode1">Shaded</label>
+              </div>
 
-
-	  
-	  <div class="card border-dark mb-3">
-	    <div class="card-header">Layers</div>
-	    <div class="card-body text-dark">
-	      
-	      <div class="custom-control pb-4">
-		<label for="tree-layer">Trees</label>
-		<select class="custom-select js-change" id="tree-layer">
-		  <option value="0">On</option>
-		  <option value="1">Off</option>
-		  <option value="2">Accent</option>
-		</select>
-	      </div>
-
-	      <!-- tree, ciriculation, site building, project building, sun/shadow, roads -->
-	      <div class="custom-control pb-4">
-		<label for="circulation-layer">Circulation</label>
-		<select class="custom-select js-change" id="circulation-layer">
-		  <option value="0">On</option>
-		  <option value="1">Off</option>
-		  <option value="2">Accent</option>
-		</select>
-	      </div>
-
-	      <div class="custom-control pb-4">
-		<label for="sitebuilding-layer">Site Building</label>
-		<select class="custom-select js-change" id="sitebuilding-layer">
-		  <option value="0">On</option>
-		  <option value="1">Off</option>
-		  <option value="2">Accent</option>
-		</select>
-	      </div>
-
-	      <div class="custom-control pb-4">
-		<label for="projectbuilding-layer">Project Building</label>
-		<select class="custom-select js-change" id="projectbuilding-layer">
-		  <option value="0">On</option>
-		  <option value="1">Off</option>
-		  <option value="2">Accent</option>
-		</select>
-	      </div>
-
-	      <div class="custom-control pb-4">
-		<label for="sunshadow-layer">Sun / Shadow</label>
-		<select class="custom-select js-change" id="sunshadow-layer">
-		  <option value="0">On</option>
-		  <option value="1">Off</option>
-		  <option value="2">Accent</option>
-		</select>
-	      </div>
-	      
-	      <div class="custom-control pb-4">
-		<label for="road-layer">Road</label>
-		<select class="custom-select js-change" id="road-layer">
-		  <option value="0">On</option>
-		  <option value="1">Off</option>
-		  <option value="2">Accent</option>
-		</select>
-	      </div>
+            </div>
+          </div>
 
 
 
-	      
-	    </div>
-	  </div>
+          <div class="card border-dark mb-3">
+            <div class="card-header">View</div>
+            <div class="card-body text-dark">
+
+              <div class="custom-radio custom-control">
+                <input type="radio" id="view0" name="view" class="custom-control-input  js-change" value="0">
+                <label class="custom-control-label" for="view0">Aerial</label>
+              </div>
+
+              <div class="custom-radio custom-control">
+                <input type="radio" id="view1" name="view" class="custom-control-input  js-change" value="1">
+                <label class="custom-control-label" for="view1">Street Perspecive</label>
+              </div>
+
+              <div class="custom-radio custom-control">
+                <input type="radio" id="view2" name="view" class="custom-control-input  js-change" value="2">
+                <label class="custom-control-label" for="view2">Building Perspecive</label>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="card border-dark mb-3">
+            <div class="card-header">Batch Layers</div>
+            <div class="card-body text-dark">
 
 
 
-	  
-	</div>
+
+              <div class="custom-control pb-4">
+                <label for="tree-layer">Selected Layer</label>
+                <select class="custom-select js-change" id="selected-layer">
+                  <option value="0">Tree</option>
+                  <option value="1">Site</option>
+                  <option value="2">Building</option>
+                </select>
+              </div>
+
+
+              <div class="custom-control pb-4">
+                <label for="tree-layer">Layer Style</label>
+                <select class="custom-select js-change" id="selected-layer-style">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+          <div class="card border-dark mb-3">
+            <div class="card-header">Individual Layers</div>
+            <div class="card-body text-dark">
+
+              <div class="custom-control pb-4">
+                <label for="tree-layer">Trees</label>
+                <select class="custom-select js-change" id="tree-layer">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+              <!-- tree, ciriculation, site building, project building, sun/shadow, roads -->
+              <div class="custom-control pb-4">
+                <label for="circulation-layer">Circulation</label>
+                <select class="custom-select js-change" id="circulation-layer">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+              <div class="custom-control pb-4">
+                <label for="sitebuilding-layer">Site Building</label>
+                <select class="custom-select js-change" id="sitebuilding-layer">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+              <div class="custom-control pb-4">
+                <label for="projectbuilding-layer">Project Building</label>
+                <select class="custom-select js-change" id="projectbuilding-layer">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+              <div class="custom-control pb-4">
+                <label for="sunshadow-layer">Sun / Shadow</label>
+                <select class="custom-select js-change" id="sunshadow-layer">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+              <div class="custom-control pb-4">
+                <label for="road-layer">Road</label>
+                <select class="custom-select js-change" id="road-layer">
+                  <option value="0">On</option>
+                  <option value="1">Off</option>
+                  <option value="2">Accent</option>
+                </select>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
