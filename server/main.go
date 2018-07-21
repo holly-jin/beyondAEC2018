@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"io/ioutil"
 	"encoding/json"
+	"time"
 )
 
 type (
@@ -15,6 +16,7 @@ type (
 		BoolSetting bool
 		StringSetting string
 		NumSetting int
+		RetrievedTime time.Time
 	}
 )
 func GetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
@@ -29,6 +31,7 @@ func GetSettings(w http.ResponseWriter, r *http.Request, fileId int) {
 		http.Error(w, "Bad file?", 404)
 		return
 	}
+	c.RetrievedTime = time.Now()
 	jsonData, err := json.Marshal(c)
 	if err != nil {
 		http.Error(w, "Json encoding error", 404)
