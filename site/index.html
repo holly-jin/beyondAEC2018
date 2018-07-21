@@ -9,6 +9,13 @@
   <body>
     <div class="container-fluid">
 
+
+      <label for="orbit">Orbit</label>
+      <input type="range" class="custom-range  js-change" id="orbit" min="-180" max="180">
+
+      <label for="zoom">Zoom</label>
+      <input type="range" class="custom-range js-change" id="zoom" min="0" max="100">
+      
       <ul class="nav nav-tabs" role="tablist">
 	<li class="nav-item">
 	  <a class="nav-link active" id="simple-tab" data-toggle="tab" href="#simple" role="tab" aria-controls="simple" aria-selected="true">Simple</a>
@@ -20,28 +27,119 @@
       <div class="tab-content">
 	<div class="tab-pane fade show active" id="simple" role="tabpanel" aria-labelledby="simple-tab">
 
+	  <!-- Theses views corresponding numbers -->
 	  <div class="custom-control custom-radio">
-	    <input type="radio" id="simpleSelection1" name="simpleSelection" class="custom-control-input">
-	    <label class="custom-control-label" for="simpleSelection1">Site Aerial</label>
+	    <input type="radio" id="simpleSelection1" name="simpleSelection" class="custom-control-input  js-change" value="0">
+	    <label class="custom-control-label" for="simpleSelection1">Aerial</label>
 	  </div>
 	  <div class="custom-control custom-radio">
-	    <input type="radio" id="simpleSelection2" name="simpleSelection" class="custom-control-input">
-	    <label class="custom-control-label" for="simpleSelection2">Site Circulation</label>
+	    <input type="radio" id="simpleSelection2" name="simpleSelection" class="custom-control-input  js-change" value="1">
+	    <label class="custom-control-label" for="simpleSelection2">Street</label>
 	  </div>
 	  <div class="custom-control custom-radio">
-	    <input type="radio" id="simpleSelection3" name="simpleSelection" class="custom-control-input">
-	    <label class="custom-control-label" for="simpleSelection3">Site Aerial With Building Hightlight</label>
+	    <input type="radio" id="simpleSelection3" name="simpleSelection" class="custom-control-input  js-change" value="2">
+	    <label class="custom-control-label" for="simpleSelection3">Building</label>
 	  </div>
 
 	</div>
 	<div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
-	  <label for="advancedRange">Some Slider Thing</label>
-	  <input type="range" class="custom-range" id="customRange1" min="0" max="360">
+
+
+
+
+
+	  <div class="card border-dark mb-3">
+	    <div class="card-header">Display Mode</div>
+	    <div class="card-body text-dark">
+
+	      <div class="custom-radio custom-control">
+		<input type="radio" id="displayMode0" name="displayMode" class="custom-control-input  js-change" value="0">
+		<label class="custom-control-label" for="displayMode0">Diagrammatic</label>
+	      </div>
+	      <div class="custom-radio custom-control">
+		<input type="radio" id="displayMode1" name="displayMode" class="custom-control-input  js-change" value="1">
+		<label class="custom-control-label" for="displayMode1">Shaded</label>
+	      </div>
+
+	    </div>
+	  </div>
+
+
+	  
+	  <div class="card border-dark mb-3">
+	    <div class="card-header">Layers</div>
+	    <div class="card-body text-dark">
+	      
+	      <div class="custom-control pb-4">
+		<label for="tree-layer">Trees</label>
+		<select class="custom-select js-change" id="tree-layer">
+		  <option value="0">On</option>
+		  <option value="1">Off</option>
+		  <option value="2">Accent</option>
+		</select>
+	      </div>
+
+	      <!-- tree, ciriculation, site building, project building, sun/shadow, roads -->
+	      <div class="custom-control pb-4">
+		<label for="circulation-layer">Circulation</label>
+		<select class="custom-select js-change" id="circulation-layer">
+		  <option value="0">On</option>
+		  <option value="1">Off</option>
+		  <option value="2">Accent</option>
+		</select>
+	      </div>
+
+	      <div class="custom-control pb-4">
+		<label for="sitebuilding-layer">Site Building</label>
+		<select class="custom-select js-change" id="sitebuilding-layer">
+		  <option value="0">On</option>
+		  <option value="1">Off</option>
+		  <option value="2">Accent</option>
+		</select>
+	      </div>
+
+	      <div class="custom-control pb-4">
+		<label for="projectbuilding-layer">Project Building</label>
+		<select class="custom-select js-change" id="projectbuilding-layer">
+		  <option value="0">On</option>
+		  <option value="1">Off</option>
+		  <option value="2">Accent</option>
+		</select>
+	      </div>
+
+	      <div class="custom-control pb-4">
+		<label for="sunshadow-layer">Sun / Shadow</label>
+		<select class="custom-select js-change" id="sunshadow-layer">
+		  <option value="0">On</option>
+		  <option value="1">Off</option>
+		  <option value="2">Accent</option>
+		</select>
+	      </div>
+	      
+	      <div class="custom-control pb-4">
+		<label for="road-layer">Road</label>
+		<select class="custom-select js-change" id="road-layer">
+		  <option value="0">On</option>
+		  <option value="1">Off</option>
+		  <option value="2">Accent</option>
+		</select>
+	      </div>
+
+
+
+	      
+	    </div>
+	  </div>
+
+
+
+	  
 	</div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
