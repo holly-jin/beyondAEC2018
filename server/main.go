@@ -99,5 +99,6 @@ func main() {
 		}
 	})
 
+	http.Handle("/", http.FileServer(http.Dir("../site")))
 	log.Fatal(http.ListenAndServe(":3720", nil))
 }
